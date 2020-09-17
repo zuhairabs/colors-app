@@ -1,0 +1,13 @@
+.Palette {
+  height: 100vh;
+}
+
+.Palette-colors {
+  height: 90%;
+}
+
+.Slider {
+  width: 340px ;
+  margin: 0 10px;
+  display: inline-block;
+}
