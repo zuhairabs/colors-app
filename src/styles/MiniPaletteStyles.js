@@ -1,7 +1,7 @@
 export default {
   root: {
     backgroundColor: "white",
-    border: "1px solid grey",
+    //border: "1px solid grey",
     borderRadius: "5px",
     padding: "0.5rem",
     position: "relative",
@@ -37,7 +37,7 @@ export default {
     width: "20%",
     display: "inline-block",
     margin: "0 auto",
-    marginBottom: "-3.5px",
+    marginBottom: "-4px",
     position: "relative"
   },
   deleteIcon: {
