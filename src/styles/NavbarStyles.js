@@ -31,6 +31,13 @@ export default {
         width: "150px"
     }
   },
+  level:{
+    fontWeight: "600",
+    color: "rgba(0,0,0,0.7)",
+    [sizes.down("sm")]: {
+        marginLeft: "15px"
+    }
+  },
   selectContainer: {
     marginLeft: "auto",
     marginRight: "1rem"

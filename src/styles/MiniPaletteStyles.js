@@ -3,7 +3,7 @@ export default {
     backgroundColor: "white",
     //border: "1px solid grey",
     borderRadius: "5px",
-    padding: "0.5rem",
+    padding: "0.6rem",
     position: "relative",
     overflow: "hidden",
     cursor: "pointer",
@@ -22,14 +22,17 @@ export default {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: "0",
-    color: "black",
-    paddinTop: "0.5rem",
-    fontSize: "1rem",
+    margin: "0.3rem 0 0 0",
+    color: "rgba(0,0,0,0.8)",
+    paddinTop: "0.8rem",
+    fontSize: "0.9rem",
+    fontWeight: "600",
+    fontFamily: `"Slabo 27px", serif`,
+    letterSpacing: "1.5px",
     position: "relative"
   },
   emoji: {
-    fontSize: "1.5rem",
+    fontSize: "1.3rem",
     marginLeft: "0.5rem"
   },
   miniColor: {

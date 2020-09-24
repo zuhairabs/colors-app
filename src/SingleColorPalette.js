@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import chroma from 'chroma-js';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/PaletteStyles'
 import ColorBox from './ColorBox';

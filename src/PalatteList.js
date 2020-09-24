@@ -46,12 +46,13 @@ class PaletteList extends Component {
   }
   
   render(){
-    const { palettes, deletePalette, classes } = this.props;
+    const { palettes, classes } = this.props;
     const { openDeleteDialog } = this.state;
     
     return(
       <div className={classes.root}>
         <div className={classes.container}>
+        {window.localStorage.clear()}
           <nav className={classes.nav}>
             <h1 className={classes.heading}>React Colors</h1>
             <Link to="/palette/new">Create Palette</Link>
@@ -93,6 +94,7 @@ class PaletteList extends Component {
             </ListItem>
           </List>
         </Dialog>
+        <div className={classes.space}></div>
       </div>
     );
   }

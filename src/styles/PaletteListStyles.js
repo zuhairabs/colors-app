@@ -29,7 +29,7 @@ export default {
         width: "80%",
     },
     [sizes.down("xs")]: {
-        width: "75%",
+        width: "82%",
     }
   },
   nav: {
@@ -39,7 +39,7 @@ export default {
     color: "white",
     alignItems: "center",
       "& a": {
-        color: "white"
+        color: "rgba(255,255,255,0.9)"
       }
   },
   palettes: {
@@ -53,10 +53,13 @@ export default {
     },
     [sizes.down("xs")]: {
       gridTemplateColumns: "repeat(1, 100%)",
-      gridGap: "1.5rem"
+      gridGap: "2rem"
     }
   },
   heading: {
-    fontSize: "2rem"
+    fontSize: "1.5rem",
+    fontWeight: 800,
+    textTransform: "uppercase",
+    fontFamily: "Nanum Gothic, sans-serif"
   }
 };

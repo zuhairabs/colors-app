@@ -30,7 +30,7 @@ export default {
     color: props => chroma(props.background).luminance() >= 0.6 ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.8)"
   },
   colorName: {
-    color: props => chroma(props.background).luminance() <= 0.08 ? "white" : "rgba(0,0,0,0.6)"
+    color: props => chroma(props.background).luminance() <= 0.08 ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.6)"
   },
   seeMore: {
     color: props => chroma(props.background).luminance() >= 0.6 ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.8)",
@@ -79,7 +79,7 @@ export default {
     zIndex: "0",
     width: "100%",
     height: "100%",
-    transition: "transform 0.7s ease-in-out",
+    transition: "transform 0.9s ease-in-out",
     transform: "scale(0.1)"
   },
   showOverlay: {

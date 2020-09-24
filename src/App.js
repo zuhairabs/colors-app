@@ -26,7 +26,7 @@ class App extends Component {
   
   deletePalette(id){
     this.setState(
-      st => ({ palettes: st.palettes.filter(palette => palette.id != id) }),
+      st => ({ palettes: st.palettes.filter(palette => palette.id !== id) }),
       this.syncLocalStorage
     );
   }
@@ -48,7 +48,7 @@ class App extends Component {
     return (
       <Route render={({ location }) => (
       <TransitionGroup >
-        <CSSTransition key={location.key} classNames="fade" timeout={500}>
+        <CSSTransition key={location.key} classNames="page" timeout={500}>
         <Switch location={location}>
         <Route exact path="/palette/new" render={(routeProps) => (
           <Page>

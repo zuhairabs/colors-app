@@ -1,9 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from "@material-ui/core/Button";
@@ -62,6 +60,7 @@ class NewPaletteForm extends React.Component {
     while (isDuplicateColor) {
       rand = Math.floor(Math.random() * allColors.length);
       randomColor = allColors[rand];
+      // eslint-disable-next-line
       isDuplicateColor = this.state.colors.some(
         color => color.name === randomColor.name
       );
@@ -92,7 +91,7 @@ class NewPaletteForm extends React.Component {
 
   render() {
     const { classes, maxColors, palettes } = this.props;
-    const { open, currColor, colors, newColorName } = this.state;
+    const { open, colors, newColorName } = this.state;
     const paletteIsFull = colors.length>=maxColors;
 
     return (
