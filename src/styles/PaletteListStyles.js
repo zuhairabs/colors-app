@@ -14,6 +14,12 @@ export default {
     //   display: "none"
     // }
 
+    [sizes.down("xs")]: {
+       "::-webkit-scrollbar": {
+         display: "none"
+      },
+    },
+    
     "::-webkit-scrollbar": {
       width: "10px",
     },
