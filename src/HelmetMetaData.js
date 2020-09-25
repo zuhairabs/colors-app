@@ -3,14 +3,12 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 export default function HelmetMetaData(props) {
     let location = useLocation();
-    let currentUrl = "http://www.camperstribe.com" + location.pathname;
+    let currentUrl = "http://zuhairabs.github.io/" + location.pathname;
     let quote = "";
-    let title = "CampersTribe - World is yours to explore";
-    let image = "https://storage.googleapis.com/cmperstribe_storage_usha/Banner/IMG_3640.JPG";
-    let description = "CampersTribe lets you experience the camping culture. We discover the hidden gems in the nearby to help you connect with nature & yourself by learning in the woods, on the riverbank under the open sky." +
-        "Trust us, its million dollars experience to ride away from city life, pitch a tent, do campfire and endless talk!" +
-        "So, join us on this voyage, and explore the beauty and miracle of being yourself!";
-    let hashtag = "#camperstribe";
+    let title = "React Color Picker";
+    let image = "https://github.com/zuhairabs/colors-app/blob/master/public/favicon.ico?raw=true";
+    let description = "A React Color Picker Web app with Responsive Design and Animations";
+    let hashtag = "#reactcolorpicker";
     return (
         <Helmet>
             <title>{title}</title>

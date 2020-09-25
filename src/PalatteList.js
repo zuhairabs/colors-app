@@ -1,21 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  FacebookMessengerShareButton,
-  LinkedinShareButton,
-  TelegramShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-  EmailIcon,
-  FacebookIcon,
-  FacebookMessengerIcon,
-  LinkedinIcon,
-  TelegramIcon,
-  TwitterIcon,
-  WhatsappIcon,
-} from "react-share";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Dialog from "@material-ui/core/Dialog";
 import List from "@material-ui/core/List";
@@ -30,18 +14,22 @@ import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
 import { withStyles } from '@material-ui/styles';
 import MiniPalette from './MiniPalette';
+import Share from './Share';
 import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openDeleteDialog: false,
+      deleteDialog: false,
+      ShareDialog: false,
       deletingId: ""
     }
     this.goToPalette = this.goToPalette.bind(this);
     this.openDialog = this.openDialog.bind(this);
+    this.openShareDialog = this.openDialog.bind(this);
     this.closeDialog = this.closeDialog.bind(this);
+    this.closeShareDialog = this.closeDialog.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
   goToPalette(id) {
@@ -49,50 +37,39 @@ class PaletteList extends Component {
   };
 
   openDialog(id) {
-    this.setState({ openDeleteDialog: true, deletingId: id });
+    this.setState({ deleteDialog: true, deletingId: id });
   }
   closeDialog() {
-    this.setState({ openDeleteDialog: false, deletingId: "" });
+    this.setState({ deleteDialog: false, deletingId: "" });
   }
 
   handleDelete() {
     this.props.deletePalette(this.state.deletingId);
     this.closeDialog();
+  };
+
+  openShareDialog(){
+    this.setState({ shareDialog: true });
+  }
+
+  closeShareDialog(){
+    this.setState({ shareDialog: false });
   }
 
   render() {
     const { palettes, classes } = this.props;
-    const { openDeleteDialog } = this.state;
+    const { deleteDialog, shareDialog } = this.state;
 
     return (
       <>
         <div className={classes.smallNav}>
           <div className={classes.contain}>
           <div className={classes.share}>
-            <FacebookShareButton>
-              <FacebookIcon style={{ margin: "0.2rem" }} size={28} round={true} />
-            </FacebookShareButton>
-            <EmailShareButton>
-              <EmailIcon style={{ margin: "0.2rem" }} bgStyle={{fill: "#cf4e42"}} size={28} round={true} />
-            </EmailShareButton>
-            <LinkedinShareButton>
-              <LinkedinIcon style={{ margin: "0.2rem" }} size={28} round={true} />
-            </LinkedinShareButton>
-            <FacebookMessengerShareButton>
-              <FacebookMessengerIcon style={{ margin: "0.2rem" }} size={28} round={true} />
-            </FacebookMessengerShareButton>
-            <TwitterShareButton>
-              <TwitterIcon style={{ margin: "0.2rem" }} size={28} round={true} />
-            </TwitterShareButton>
-            <TelegramShareButton>
-              <TelegramIcon style={{ margin: "0.2rem" }} size={28} round={true} />
-            </TelegramShareButton>
-            <WhatsappShareButton>
-              <WhatsappIcon style={{ margin: "0.2rem" }} size={28} round={true} />
-            </WhatsappShareButton>
+            <Share shareDialog={shareDialog} openShareDialog={this.openShareDialog} closeShareDialog={this.closeShareDialog}/>
           </div>
           <div className={classes.me}>
-                  Mine Links
+            <a className="made" target="_blank" rel="noopener noreferrer" href="https://zuhairabs.github.io">Made with <span style={{ color: "#cf4e42" }} role="img" aria-label="heart" aria-labelledby="heart">❤️</span> by Zuhair Abbas</a>
+            <a className="git" target="_blank" rel="noopener noreferrer" href="http://github.com/zuhairabs"><i style={{marginLeft: "1rem"}} className="fa fa-github fa-2x"></i></a>
           </div>
           </div>
         </div>
@@ -112,7 +89,7 @@ class PaletteList extends Component {
             <div className={classes.space}></div>
           </div>
           <Dialog
-            open={openDeleteDialog}
+            open={deleteDialog}
             aria-labelledby='delete-dialog-title'
             onClose={this.closeDialog}
           >

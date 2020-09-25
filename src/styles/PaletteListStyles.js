@@ -111,10 +111,24 @@ export default {
     zIndex: "99",
   },
   share: {
-    marginLeft: "1rem", 
+    marginLeft: "1rem",
   },
   me: {
+    display: "flex",
+    alignItems: "center",
     marginRight: "1rem",
+    transition: "all 0.3s ease-in-out",
+    "& .made": {
+      textDecoration: "none",
+      borderBottom: "1px solid transparent",
+      transition: "all 0.3s ease-in-out"
+    },
+    "& .made:hover": {
+      borderColor: "white"
+    },
+    "& .git:hover": {
+      transform: "scale(1.2)"
+    },
   },
   space: {
     margin: "2rem"
