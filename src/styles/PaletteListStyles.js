@@ -104,7 +104,7 @@ export default {
     display: "flex",
     justifyContent: "space-between",
     backgroundColor: "#0c2461",
-    boxShadow: "11px 22px 45px rgba(0, 0, 0, 0.4)",
+    boxShadow: "8px 15px 55px rgba(0, 0, 0, 0.4)",
     backgroundImage: `url(${navBg})`,
     color: "white",
     alignItems: "center",
@@ -112,6 +112,7 @@ export default {
   },
   share: {
     marginLeft: "1rem",
+    marginRight: "1rem"
   },
   me: {
     display: "flex",
@@ -121,7 +122,10 @@ export default {
     "& .made": {
       textDecoration: "none",
       borderBottom: "1px solid transparent",
-      transition: "all 0.3s ease-in-out"
+      transition: "all 0.3s ease-in-out",
+       [sizes.down("xs")]: {
+        fontSize: "0.8rem",
+    }
     },
     "& .made:hover": {
       borderColor: "white"
@@ -131,6 +135,6 @@ export default {
     },
   },
   space: {
-    margin: "2rem"
+    margin: "5rem"
   }
 };

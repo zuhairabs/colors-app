@@ -46,7 +46,7 @@ export default function Share() {
   return (
     <div>
       <Button aria-describedby={id}  style={{ margin: "0.5rem"}} variant="contained" color="primary" onClick={handleClick}>
-        Share &nbsp;<ShareIcon />
+        Share <ShareIcon />
       </Button>
       <Popover
         id={id}
