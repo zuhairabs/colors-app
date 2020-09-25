@@ -1,6 +1,8 @@
 export default {
   PaletteFooter: {
     backgroundColor: "white",
+    color: "rgba(0,0,0,0.8)",
+    fontFamily: "Nanum Gothic, sans-serif",
     height: "5vh",
     display: "flex",
     justifyContent: "flex-end",

@@ -7,8 +7,12 @@ export default {
     position: "relative",
     overflow: "hidden",
     cursor: "pointer",
+    transition: "all 0.4s ease-in-out",
     "&:hover svg": {
-      opacity: 1
+      opacity: 1,
+    },
+    "&:hover": {
+      boxShadow: "10px 15px rgba(0,0,0,0.4)",
     }
   },
   colors: {
